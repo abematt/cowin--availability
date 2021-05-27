@@ -3,6 +3,7 @@ import StateSelector from "./components/StateSelector";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import DistrictSelector from "./components/DistrictSelector";
+import Availability from "./components/Availability";
 
 function App() {
   const [allStates, setStates] = useState();
@@ -12,6 +13,12 @@ function App() {
   const [districtSelected, setDistrictSelection] = useState(false);
   const [districtId, setDistrictId] = useState(1);
 
+  //Function to get district list from local storage
+  function getLocalStorageValues() {
+    const allDistricts = localStorage.getItem("allDistricts");
+    setDistricts(JSON.parse(allDistricts));
+  }
+
   //Call API and fetch results on window load
   useEffect(() => {
     async function fetchData() {
@@ -19,6 +26,7 @@ function App() {
         "https://cdn-api.co-vin.in/api/v2/admin/location/states"
       );
       setStates(data);
+      getLocalStorageValues();
     }
     fetchData();
   }, []);
@@ -72,6 +80,7 @@ function App() {
     const districtData = await districtDataResult.json();
     districtData.districts.map((Element) => [(Element.selected = false)]);
     setDistricts(districtData);
+    localStorage.setItem("allDistricts", JSON.stringify(districtData));
   }
 
   return (
@@ -98,6 +107,10 @@ function App() {
               districtSelection={districtSelected}
             ></DistrictSelector>
           )}
+        />
+        <Route
+          path="/availability"
+          render={(props) => <Availability></Availability>}
         />
       </div>
     </Router>

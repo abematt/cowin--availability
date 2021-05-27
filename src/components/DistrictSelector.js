@@ -15,7 +15,7 @@ export default function DistrictSelector({
       <Link to="/">
         <button>Back</button>
       </Link>
-      <Link to="/districts">
+      <Link to="/availability">
         <button disabled={!districtSelection}>Next</button>
       </Link>
     </div>
