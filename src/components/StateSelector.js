@@ -11,7 +11,9 @@ export default function StateSelector({
       <StateList selectState={selectState} statelist={statelist}></StateList>
 
       <Link to="/districts">
-        <button disabled={!stateSelection}>Next</button>
+        <button className="btn" disabled={!stateSelection}>
+          Next
+        </button>
       </Link>
     </div>
   );

@@ -12,13 +12,27 @@ function App() {
   const [allDistricts, setDistricts] = useState();
   const [districtSelected, setDistrictSelection] = useState(false);
   const [districtId, setDistrictId] = useState(1);
+  const [dateValue, setDate] = useState();
+  const [appointmentDetails, setAppointmentDetails] = useState();
 
   //Function to get district list from local storage
   function getLocalStorageValues() {
     const allDistricts = localStorage.getItem("allDistricts");
     setDistricts(JSON.parse(allDistricts));
+    const districtId = localStorage.getItem("districtId");
+    setDistrictId(JSON.parse(districtId));
   }
 
+  function setCurrentDate() {
+    const currentDate = new Date();
+    const date_formatted =
+      currentDate.getDate() +
+      "-" +
+      currentDate.getMonth() +
+      "-" +
+      currentDate.getFullYear();
+    setDate(date_formatted);
+  }
   //Call API and fetch results on window load
   useEffect(() => {
     async function fetchData() {
@@ -26,6 +40,7 @@ function App() {
         "https://cdn-api.co-vin.in/api/v2/admin/location/states"
       );
       setStates(data);
+      // setCurrentDate();
       getLocalStorageValues();
     }
     fetchData();
@@ -71,6 +86,7 @@ function App() {
     districtCopy && setDistricts({ districts: districtCopy, ttl: 24 });
     setDistrictSelection(true);
     setDistrictId(district_id);
+    localStorage.setItem("districtId", JSON.stringify(district_id));
   }
 
   async function fetchDistricts(state_id) {
@@ -81,6 +97,17 @@ function App() {
     districtData.districts.map((Element) => [(Element.selected = false)]);
     setDistricts(districtData);
     localStorage.setItem("allDistricts", JSON.stringify(districtData));
+  }
+
+  async function fetchAppointmentDetails(date) {
+    const district_id = districtId;
+    console.log("date in APP", date);
+    const appointmentDetals = await fetch(
+      `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${district_id}&date=${date}`
+    );
+    const appointmentData = await appointmentDetals.json();
+    setAppointmentDetails(appointmentData);
+    localStorage.setItem("appointmentData", JSON.stringify(appointmentData));
   }
 
   return (
@@ -110,7 +137,14 @@ function App() {
         />
         <Route
           path="/availability"
-          render={(props) => <Availability></Availability>}
+          render={(props) => (
+            <Availability
+              districtId={districtId}
+              fetchAppointmentDetails={fetchAppointmentDetails}
+              setDate={setDate}
+              appointmentDetails={appointmentDetails}
+            ></Availability>
+          )}
         />
       </div>
     </Router>

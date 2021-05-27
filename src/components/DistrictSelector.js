@@ -13,10 +13,12 @@ export default function DistrictSelector({
         districtlist={districtlist}
       ></DistrictList>
       <Link to="/">
-        <button>Back</button>
+        <button className="btn">Back</button>
       </Link>
       <Link to="/availability">
-        <button disabled={!districtSelection}>Next</button>
+        <button className="btn" disabled={!districtSelection}>
+          Next
+        </button>
       </Link>
     </div>
   );

@@ -41,7 +41,20 @@ code {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.appointmentContainer {
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 10vh;
+}
+
 .dateinput {
-  position: absolute;
-  top: 0;
+}
+
+.btn {
+}
+
+.dateinput {
+}
+
+.rwd-table {
 }
