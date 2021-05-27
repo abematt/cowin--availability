@@ -9,12 +9,17 @@ export default function State({
     if (type === "state") {
       return stateElement.state_id;
     } else {
-      return stateElement.district_id;
+      console.log("District ID", stateElement.district_id);
+      return value;
     }
   }
   return (
     <h3
-      onClick={() => selectState(typeChose())}
+      onClick={() =>
+        selectState(
+          type === "state" ? stateElement.state_id : stateElement.district_id
+        )
+      }
       className={`Cards ${stateElement.selected ? "selected" : ""}`}
     >
       {name}

@@ -2,9 +2,7 @@ import "./App.css";
 import StateSelector from "./components/StateSelector";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Footer from "./components/Footer";
 import DistrictSelector from "./components/DistrictSelector";
-import StateList from "./components/StateList";
 
 function App() {
   const [allStates, setStates] = useState();
@@ -63,8 +61,8 @@ function App() {
       });
 
     districtCopy && setDistricts({ districts: districtCopy, ttl: 24 });
-    setStateSelection(true);
-    setDistrictId(districtId);
+    setDistrictSelection(true);
+    setDistrictId(district_id);
   }
 
   async function fetchDistricts(state_id) {
@@ -86,19 +84,21 @@ function App() {
             <StateSelector
               selectState={selectState}
               statelist={allStates}
+              stateSelection={stateSelected}
             ></StateSelector>
           )}
         />
+
         <Route
           path="/districts"
           render={(props) => (
             <DistrictSelector
               selectDistrict={selectDistrict}
               districtlist={allDistricts}
+              districtSelection={districtSelected}
             ></DistrictSelector>
           )}
         />
-        <Footer stateSelection={stateSelected}></Footer>
       </div>
     </Router>
   );

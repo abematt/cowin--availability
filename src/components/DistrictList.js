@@ -3,7 +3,7 @@ import Card from "./Card";
 export default function DistrictList({ districtlist, selectDistrict }) {
   {
     function listDistrictOptions(districtlist) {
-      return districtlist.states.map((districtElement) => (
+      return districtlist.districts.map((districtElement) => (
         <Card
           className="stateCard"
           key={districtElement.district_id}
