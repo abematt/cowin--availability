@@ -7,7 +7,7 @@ export default function StateSelector({
   selectState,
 }) {
   return (
-    <div>
+    <div className="card-container">
       <StateList selectState={selectState} statelist={statelist}></StateList>
 
       <Link to="/districts">

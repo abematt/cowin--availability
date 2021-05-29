@@ -7,7 +7,7 @@ export default function DistrictSelector({
   selectDistrict,
 }) {
   return (
-    <div>
+    <div className="card-container">
       <DistrictList
         selectDistrict={selectDistrict}
         districtlist={districtlist}
