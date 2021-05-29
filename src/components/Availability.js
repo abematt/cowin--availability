@@ -18,15 +18,17 @@ export default function Availability({
   }
 
   return (
-    <div className="appointmentContainer">
-      <input
-        className="dateinput"
-        type="date"
-        onInput={(inputDate) => sanitizeDate(inputDate)}
-      ></input>
-      <Link to="/districts">
-        <button className="btn">Back</button>
-      </Link>
+    <div className="mainAppointmentContainer">
+      <div className="dateinput">
+        <input
+          type="date"
+          onInput={(inputDate) => sanitizeDate(inputDate)}
+          align="right"
+        ></input>
+        <Link to="/districts">
+          <button className="btn">Back</button>
+        </Link>
+      </div>
       <ListAppointments
         appointmentDetails={appointmentDetails}
       ></ListAppointments>

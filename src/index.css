@@ -157,9 +157,11 @@ input::-moz-focus-inner {
 }
 
 .card-container {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   background: #d8d8d8;
+  color: rgba(0, 0, 0, 0.616);
   justify-content: space-evenly;
   height: 100vh;
   padding: 10%;
@@ -168,7 +170,7 @@ input::-moz-focus-inner {
 .stateCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .Cards {
@@ -185,11 +187,12 @@ input::-moz-focus-inner {
 }
 
 .btn {
-  width: 8%;
-  height: 200%;
-  border-radius: 10px;
-  background: #ededef;
-  box-shadow: 5px 5px 17px #bebebf, -5px -5px 17px #ffffff;
+  font-family: "Oswald", sans-serif;
+}
+
+.NavigationBar {
+  display: flex;
+  justify-content: center;
 }
 
 .Cards:hover {
@@ -197,8 +200,33 @@ input::-moz-focus-inner {
   box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
 }
 
+.mainAppointmentContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+}
+.dateinput {
+  display: flex;
+  justify-content: space-around;
+  background: #eceaea;
+}
 .appointmentContainer {
-  display: grid;
-  justify-items: center;
-  grid-row-gap: 10vh;
+  display: flex;
+
+  justify-content: center;
+}
+
+.rwd-table {
+  width: 50vw;
+}
+
+.tableHead {
+  padding-top: 10px;
+
+  background: #eceaea;
+}
+
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
 }

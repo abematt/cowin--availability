@@ -12,14 +12,16 @@ export default function DistrictSelector({
         selectDistrict={selectDistrict}
         districtlist={districtlist}
       ></DistrictList>
-      <Link to="/">
-        <button className="btn">Back</button>
-      </Link>
-      <Link to="/availability">
-        <button className="btn" disabled={!districtSelection}>
-          Next
-        </button>
-      </Link>
+      <div className="NavigationBar">
+        <Link to="/">
+          <button className="btn">Back</button>
+        </Link>
+        <Link to="/availability">
+          <button className="btn" disabled={!districtSelection}>
+            Next
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

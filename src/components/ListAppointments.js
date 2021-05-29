@@ -1,9 +1,9 @@
 export default function ListAppointments({ appointmentDetails }) {
   return (
-    <div>
+    <div className="appointmentContainer">
       <table className="rwd-table">
         <thead>
-          <tr>
+          <tr className="tableHead">
             <th>Name</th>
             <th>Fee Type</th>
             <th>Vaccine</th>
