@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import ListAppointments from "./ListAppointments";
+import { BiArrowBack } from "react-icons/bi";
+import { FcCancel } from "react-icons/fc";
 
 export default function Availability({
   districtId,
@@ -26,7 +28,9 @@ export default function Availability({
           align="right"
         ></input>
         <Link to="/districts">
-          <button className="btn">Back</button>
+          <button className="btn">
+            <BiArrowBack style={{ color: "red" }}></BiArrowBack>
+          </button>
         </Link>
       </div>
       <div class="gap"></div>

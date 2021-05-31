@@ -1,5 +1,7 @@
 import DistrictList from "../components/DistrictList";
 import { Link } from "react-router-dom";
+import { FcRight } from "react-icons/fc";
+import { FcLeft } from "react-icons/fc";
 
 export default function DistrictSelector({
   districtSelection,
@@ -14,11 +16,13 @@ export default function DistrictSelector({
       ></DistrictList>
       <div className="NavigationBar">
         <Link to="/">
-          <button className="btn">Back</button>
+          <button className="btn">
+            <FcLeft></FcLeft>{" "}
+          </button>
         </Link>
         <Link to="/availability">
           <button className="btn" disabled={!districtSelection}>
-            Next
+            <FcRight></FcRight>
           </button>
         </Link>
       </div>

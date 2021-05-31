@@ -160,7 +160,7 @@ input::-moz-focus-inner {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-  background: #d8d8d8;
+  background: #f7f7f7;
   color: rgba(0, 0, 0, 0.616);
   justify-content: space-evenly;
   height: 100vh;
@@ -175,15 +175,15 @@ input::-moz-focus-inner {
 
 .Cards {
   border-radius: 10px;
-  background: #d8d8d8;
-  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
+  background: #f7f7f7;
+  box-shadow: -5px 5px 12px #c1c1c1, 5px -5px 12px #ffffff;
   padding: 25px;
   cursor: default;
 }
 
 .Cards.selected {
-  background: #d8d8d8;
-  box-shadow: inset 5px 5px 17px #adadad, inset -5px -5px 17px #ffffff;
+  background: #f7f7f7;
+  box-shadow: inset -5px 5px 12px #c1c1c1, inset 5px -5px 12px #ffffff;
 }
 
 .btn {
@@ -208,9 +208,9 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #d8d8d8;
-  height: 5vh;
-  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
+
+  background: #f7f7f7;
+  box-shadow: -5px 5px 10px #cbcbcb, 5px -5px 10px #ffffff;
 }
 
 input {
@@ -233,8 +233,9 @@ input {
   align-items: center;
   width: 50vw;
   height: 5vh;
-  background: #d8d8d8;
-  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
+  border-radius: 25px;
+  background: #f7f7f7;
+  box-shadow: -5px 5px 10px #cbcbcb, 5px -5px 10px #ffffff;
 }
 
 .tableHead th {
@@ -244,6 +245,7 @@ input {
 .table-row {
   display: flex;
   justify-content: center;
+
   width: 50vw;
   padding: 10px;
 }
@@ -254,6 +256,17 @@ input {
 .table-row td {
   flex: 1;
   padding: 20px;
-  background: #d8d8d8;
-  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
+  border-radius: 25px;
+  background: #f7f7f7;
+  box-shadow: -5px 5px 10px #cbcbcb, 5px -5px 10px #ffffff;
+}
+
+.table-row .COVAXIN {
+  background: #9cccdc;
+  box-shadow: -5px 5px 12px #7a9fac, 5px -5px 12px #bef9ff;
+}
+
+.table-row .COVISHIELD {
+  background: #f4a575;
+  box-shadow: -5px 5px 12px #be815b, 5px -5px 12px #ffc98f;
 }

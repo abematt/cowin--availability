@@ -1,5 +1,6 @@
 import StateList from "./StateList";
 import { Link } from "react-router-dom";
+import { FcRight } from "react-icons/fc";
 
 export default function StateSelector({
   stateSelection,
@@ -14,7 +15,7 @@ export default function StateSelector({
 
       <Link to="/districts">
         <button className="btn" disabled={!stateSelection}>
-          Next
+          <FcRight></FcRight>
         </button>
       </Link>
     </div>

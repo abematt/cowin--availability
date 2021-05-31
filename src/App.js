@@ -87,6 +87,7 @@ function App() {
     setDistrictSelection(true);
     setDistrictId(district_id);
     localStorage.setItem("districtId", JSON.stringify(district_id));
+    setAppointmentDetails();
   }
 
   async function fetchDistricts(state_id) {
@@ -96,6 +97,7 @@ function App() {
     const districtData = await districtDataResult.json();
     districtData.districts.map((Element) => [(Element.selected = false)]);
     setDistricts(districtData);
+
     localStorage.setItem("allDistricts", JSON.stringify(districtData));
   }
 
@@ -107,7 +109,7 @@ function App() {
     );
     const appointmentData = await appointmentDetals.json();
     setAppointmentDetails(appointmentData);
-    localStorage.setItem("appointmentData", JSON.stringify(appointmentData));
+    // localStorage.setItem("appointmentData", JSON.stringify(appointmentData));
   }
 
   return (
