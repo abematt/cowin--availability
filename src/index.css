@@ -200,33 +200,60 @@ input::-moz-focus-inner {
   box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
 }
 
-.mainAppointmentContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: flex-start;
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
 }
+
 .dateinput {
   display: flex;
   justify-content: space-around;
-  background: #eceaea;
+  align-items: center;
+  background: #d8d8d8;
+  height: 5vh;
+  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
 }
+
+input {
+  height: 3vh;
+}
+
 .appointmentContainer {
   display: flex;
-
   justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-.rwd-table {
-  width: 50vw;
+.gap {
+  padding: 1%;
 }
 
 .tableHead {
-  padding-top: 10px;
-
-  background: #eceaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 5vh;
+  background: #d8d8d8;
+  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
 }
 
-h1 {
-  font-family: "Roboto Condensed", sans-serif;
+.tableHead th {
+  flex: 1;
+}
+
+.table-row {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  padding: 10px;
+}
+
+.table-row .hospitalName {
+}
+
+.table-row td {
+  flex: 1;
+  padding: 20px;
+  background: #d8d8d8;
+  box-shadow: 5px 5px 17px #adadad, -5px -5px 17px #ffffff;
 }

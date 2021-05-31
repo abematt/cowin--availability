@@ -29,6 +29,7 @@ export default function Availability({
           <button className="btn">Back</button>
         </Link>
       </div>
+      <div class="gap"></div>
       <ListAppointments
         appointmentDetails={appointmentDetails}
       ></ListAppointments>
